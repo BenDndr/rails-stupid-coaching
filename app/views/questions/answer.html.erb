@@ -1,0 +1,22 @@
+<p class="container1">
+  <%= params["question"] %>
+  <br>
+  <i>-You</i>
+</p>
+
+<p class="container2">
+  <%=
+    if params["question"] == "I am going to work"
+      @answers[0]
+    elsif params["question"][-1] == "?"
+      @answers[1]
+    else
+      @answers[2]
+    end
+  %>
+  <br>
+  <i>-Your coach</i>
+  <br>
+</p>
+
+<a href="http://localhost:3000/ask">Ask a new question</a>
